@@ -1,0 +1,42 @@
+using System;
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+{
+    private static T Instance;
+    public static T instance => Instance;
+    
+    protected virtual void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this as T;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (Instance != this) 
+        {
+            DestroyImmediate(this.gameObject);
+        }
+    }
+    
+}
+
+public abstract class SingletonInstance<T> : MonoBehaviour where T : MonoBehaviour
+{
+    private static T Instance;
+    public static T instance => Instance;
+
+    protected virtual void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this as T;
+        }
+        else if (Instance != this)
+        {
+        }
+    }
+
+}

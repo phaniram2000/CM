@@ -1,0 +1,544 @@
+fileFormatVersion: 2
+guid: f6a98e14920f2e54fb0928d5b53f550a
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Spank
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Spank
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.69069767
+        functionName: SpawnSpankParticleFx
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 4a816ff5333fb244986f9c5613508fb2, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: teacher:mixamorig:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: teacher:mixamorig:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: teacher anim (1)(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:Teacher Woman_Teacher_0
+      parentName: teacher anim (1)(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: teacher:mixamorig:Hips
+      parentName: teacher anim (1)(Clone)
+      position: {x: 0, y: 0.7406649, z: -0.0009869337}
+      rotation: {x: 0.000000021855858, y: -1.426361e-19, z: -1.0111364e-12, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:RightUpLeg
+      parentName: teacher:mixamorig:Hips
+      position: {x: 0.074471146, y: -0.051405028, z: 0.0021517968}
+      rotation: {x: 0.0002091211, y: 0.016666861, z: 0.9997824, w: -0.0125443945}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: teacher:mixamorig:RightLeg
+      parentName: teacher:mixamorig:RightUpLeg
+      position: {x: -0, y: 0.30995587, z: 2.220446e-18}
+      rotation: {x: -0.05406983, y: 0.00036413837, z: -0.0067245946, w: 0.99851453}
+      scale: {x: 1.0000002, y: 1.0000002, z: 0.9999999}
+    - name: teacher:mixamorig:RightFoot
+      parentName: teacher:mixamorig:RightLeg
+      position: {x: 1.7763568e-17, y: 0.29150945, z: 0}
+      rotation: {x: 0.48075143, y: 0.041712303, z: -0.022903241, w: 0.87556475}
+      scale: {x: 1.0000004, y: 1.0000001, z: 0.9999999}
+    - name: teacher:mixamorig:RightToeBase
+      parentName: teacher:mixamorig:RightFoot
+      position: {x: 1.7763568e-17, y: 0.12300209, z: 4.440892e-18}
+      rotation: {x: 0.2972873, y: -0.032603998, z: 0.010158266, w: 0.9541772}
+      scale: {x: 1.0000005, y: 1.0000004, z: 0.99999994}
+    - name: teacher:mixamorig:RightToe_End
+      parentName: teacher:mixamorig:RightToeBase
+      position: {x: -8.881784e-18, y: 0.05095116, z: 4.440892e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:Spine
+      parentName: teacher:mixamorig:Hips
+      position: {x: -0, y: 0.09241752, z: 0.004625821}
+      rotation: {x: 0.025003262, y: 8.511027e-14, z: -7.257651e-15, w: 0.9996874}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:Spine1
+      parentName: teacher:mixamorig:Spine
+      position: {x: -0, y: 0.10795549, z: 0}
+      rotation: {x: -0.000000013038516, y: 2.6368515e-13, z: 7.197646e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:Spine2
+      parentName: teacher:mixamorig:Spine1
+      position: {x: -3.530578e-13, y: 0.13350369, z: 0.01736198}
+      rotation: {x: 0.000000024214387, y: -0.0000000073484463, z: 0.000000002233078, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: teacher:mixamorig:RightShoulder
+      parentName: teacher:mixamorig:Spine2
+      position: {x: 0.054660983, y: 0.10448668, z: 0.009206176}
+      rotation: {x: 0.57932115, y: 0.40808612, z: -0.57151914, w: 0.41378582}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: teacher:mixamorig:RightArm
+      parentName: teacher:mixamorig:RightShoulder
+      position: {x: -0, y: 0.11228995, z: -1.4210854e-16}
+      rotation: {x: -0.17153539, y: 0.0052390546, z: -0.030075103, w: 0.9847049}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:RightForeArm
+      parentName: teacher:mixamorig:RightArm
+      position: {x: -0, y: 0.22596212, z: 0}
+      rotation: {x: -0.0277193, y: -0.0013227792, z: 0.04764871, w: 0.99847865}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: teacher:mixamorig:RightHand
+      parentName: teacher:mixamorig:RightForeArm
+      position: {x: -1.7763568e-17, y: 0.18588673, z: -1.4210854e-16}
+      rotation: {x: 0.01436973, y: 0.00079588307, z: 0.05530634, w: 0.9983657}
+      scale: {x: 1.0000001, y: 1.0000005, z: 1.0000005}
+    - name: teacher:mixamorig:RightHandIndex1
+      parentName: teacher:mixamorig:RightHand
+      position: {x: -3.5527136e-17, y: 0.108404025, z: 0}
+      rotation: {x: -0.026997266, y: -0.0005756312, z: 0.02130771, w: 0.9994083}
+      scale: {x: 1, y: 1.0000001, z: 0.99999994}
+    - name: teacher:mixamorig:RightHandIndex2
+      parentName: teacher:mixamorig:RightHandIndex1
+      position: {x: -3.5527136e-17, y: 0.019024665, z: 0}
+      rotation: {x: -0.034782544, y: 0.000001001637, z: 0.13183765, w: 0.99066097}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000001}
+    - name: teacher:mixamorig:RightHandIndex3
+      parentName: teacher:mixamorig:RightHandIndex2
+      position: {x: 0.009038388, y: 0.02613578, z: 0.0023842256}
+      rotation: {x: 0.006998801, y: -0.008469793, z: 0.06631083, w: 0.99773854}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000002}
+    - name: teacher:mixamorig:RightHandIndex4
+      parentName: teacher:mixamorig:RightHandIndex3
+      position: {x: 0.010486072, y: 0.017399233, z: 0.0011155998}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:Neck
+      parentName: teacher:mixamorig:Spine2
+      position: {x: -0, y: 0.1387998, z: 5.0967494e-12}
+      rotation: {x: -0.025003266, y: 0.0000000074482505, z: -1.8628987e-10, w: 0.9996874}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: teacher:mixamorig:Head
+      parentName: teacher:mixamorig:Neck
+      position: {x: -0, y: 0.068242036, z: 0.013921985}
+      rotation: {x: -0, y: -0, z: -1.3877788e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: teacher:mixamorig:HeadTop_End
+      parentName: teacher:mixamorig:Head
+      position: {x: -0, y: 0.40815338, z: 0.08326697}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:LeftShoulder
+      parentName: teacher:mixamorig:Spine2
+      position: {x: -0.053379282, y: 0.119247824, z: 0.0012496924}
+      rotation: {x: 0.5815223, y: -0.4069785, z: 0.5691355, w: 0.4150725}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+    - name: teacher:mixamorig:LeftArm
+      parentName: teacher:mixamorig:LeftShoulder
+      position: {x: 8.881784e-18, y: 0.11228995, z: 0}
+      rotation: {x: 0.17089173, y: 0.006694466, z: -0.03856647, w: -0.98451203}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000001}
+    - name: teacher:mixamorig:LeftForeArm
+      parentName: teacher:mixamorig:LeftArm
+      position: {x: 1.7763568e-17, y: 0.2260267, z: -1.4210854e-16}
+      rotation: {x: 0.02335819, y: -0.0012877836, z: 0.04547248, w: -0.9986916}
+      scale: {x: 0.99999964, y: 0.99999976, z: 0.99999964}
+    - name: teacher:mixamorig:LeftHand
+      parentName: teacher:mixamorig:LeftForeArm
+      position: {x: 0.0000000112480985, y: 0.1858731, z: 0.000000004218161}
+      rotation: {x: -0.007923427, y: 0.00009257112, z: -0.011683975, w: 0.9999004}
+      scale: {x: 1, y: 1.0000005, z: 1.0000005}
+    - name: teacher:mixamorig:LeftHandIndex1
+      parentName: teacher:mixamorig:LeftHand
+      position: {x: 1.7763568e-17, y: 0.11195605, z: 1.4210854e-16}
+      rotation: {x: -0.013278856, y: -0.0003537799, z: 0.026621345, w: 0.9995573}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: teacher:mixamorig:LeftHandIndex2
+      parentName: teacher:mixamorig:LeftHandIndex1
+      position: {x: -0, y: 0.016096212, z: 1.4210854e-16}
+      rotation: {x: -0.015669247, y: 0.00000014508261, z: 0.0026213634, w: 0.9998738}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: teacher:mixamorig:LeftHandIndex3
+      parentName: teacher:mixamorig:LeftHandIndex2
+      position: {x: 0.00046303074, y: 0.024642283, z: 0.0027673824}
+      rotation: {x: -0.052818142, y: 0.0020377852, z: -0.009307461, w: 0.9985587}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: teacher:mixamorig:LeftHandIndex4
+      parentName: teacher:mixamorig:LeftHandIndex3
+      position: {x: -0.00027883818, y: 0.018801987, z: 0.0056987754}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: teacher:mixamorig:LeftUpLeg
+      parentName: teacher:mixamorig:Hips
+      position: {x: -0.074471146, y: -0.051405028, z: -0.00017792462}
+      rotation: {x: -0.0002188943, y: 0.017446687, z: 0.9997691, w: 0.012543573}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999994}
+    - name: teacher:mixamorig:LeftLeg
+      parentName: teacher:mixamorig:LeftUpLeg
+      position: {x: -0, y: 0.30997238, z: 0}
+      rotation: {x: -0.05151651, y: -0.00034692866, z: 0.0067252354, w: 0.9986495}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: teacher:mixamorig:LeftFoot
+      parentName: teacher:mixamorig:LeftLeg
+      position: {x: -0, y: 0.29137018, z: 8.881784e-18}
+      rotation: {x: 0.4795265, y: -0.04161209, z: 0.022772308, w: 0.87624437}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: teacher:mixamorig:LeftToeBase
+      parentName: teacher:mixamorig:LeftFoot
+      position: {x: -0, y: 0.123638205, z: -4.440892e-18}
+      rotation: {x: 0.29530907, y: 0.03224793, z: -0.009973823, w: 0.9548053}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000002}
+    - name: teacher:mixamorig:LeftToe_End
+      parentName: teacher:mixamorig:LeftToeBase
+      position: {x: -8.881784e-18, y: 0.050607037, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
