@@ -266,6 +266,7 @@ public class MainCanvasController : MonoBehaviour
 		if(GAScript.Instance)
 		{
 			GAScript.Instance.LevelCompleted((LevelData()-1).ToString());
+			
 		}
 	}
 
@@ -292,7 +293,6 @@ public class MainCanvasController : MonoBehaviour
 			val = 1;
 		}
 		else val++;
-
 		return val;
 	}
 

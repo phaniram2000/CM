@@ -61,14 +61,4 @@ extern "C"
             
         }
     }
-    
-    bool ttpGetAttDidShowFlag()
-    {
-        return [NSUserDefaults.standardUserDefaults boolForKey:@"attDidShowEventLogged"];
-    }
-    
-    void ttpSetAttDidShowFlag()
-    {
-        [NSUserDefaults.standardUserDefaults setBool:YES forKey:@"attDidShowEventLogged"]; 
-    }
 }
