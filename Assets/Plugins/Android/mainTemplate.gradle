@@ -47,12 +47,12 @@ apply plugin: 'com.android.library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
-    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Analytics:3.9.0.1.1' // Assets/Editor/TTPDependencies.xml:21
-    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_AppsFlyer:3.9.0.2.2' // Assets/Editor/TTPDependencies.xml:18
-    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Core:3.9.0.2.2' // Assets/Editor/TTPDependencies.xml:16
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Analytics:3.8.0.7.4' // Assets/Editor/TTPDependencies.xml:21
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_AppsFlyer:3.8.0.6.2' // Assets/Editor/TTPDependencies.xml:18
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Core:3.8.0.7.3' // Assets/Editor/TTPDependencies.xml:16
     implementation 'com.tabtale.tt_plugins.android:TT_Plugins_CrashTool:0.0.0.0.60' // Assets/Editor/TTPDependencies.xml:19
-    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_FirebaseAgent:3.9.0.1.1' // Assets/Editor/TTPDependencies.xml:22
-    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Privacy_Settings:3.9.0.0.1' // Assets/Editor/TTPDependencies.xml:20
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_FirebaseAgent:3.8.0.7.4' // Assets/Editor/TTPDependencies.xml:22
+    implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Privacy_Settings:0.0.0.0.429' // Assets/Editor/TTPDependencies.xml:20
     implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Remote_Config:0.0.0.0.42' // Assets/Editor/TTPDependencies.xml:23
     implementation 'com.tabtale.tt_plugins.android:TT_Plugins_Unity:3.8.0.0.1' // Assets/Editor/TTPDependencies.xml:17
 // Android Resolver Dependencies End

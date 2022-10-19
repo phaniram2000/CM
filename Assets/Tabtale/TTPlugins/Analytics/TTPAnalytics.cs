@@ -565,15 +565,6 @@ namespace Tabtale.TTPlugins
         }
         
         [Preserve]
-        static void AttDidShow(Dictionary<string, object> additionalParams)
-        {
-            if (Impl != null) {
-                Impl.LogEvent(AnalyticsTargets.ANALYTICS_TARGET_DELTA_DNA | AnalyticsTargets.ANALYTICS_TARGET_FIREBASE,
-                    TTPEvents.ATT_DID_SHOW, additionalParams, false, false);
-            }
-        }
-        
-        [Preserve]
         private static void TriggerOnDeltaDnaReady(bool isReady, string userId)
         {
             Debug.Log("TTPAnalytics::TriggerOnDeltaDnaReady");
