@@ -27,7 +27,8 @@ public class MainCanvasController : MonoBehaviour
 		retryButton,
 		passedHeader,
 		failedHeader,
-		skipLevelButton;
+		skipLevelButton,
+		metaCanvasPanel;
 
 	[SerializeField] private bool showSkipLevelButton;
 	
@@ -271,6 +272,7 @@ public class MainCanvasController : MonoBehaviour
 
 	private void OnTapToPlay()
 	{
+		metaCanvasPanel.SetActive(false);
 		int val = PlayerPrefs.GetInt("levelNo", 1);
 
 		if (PlayerPrefs.GetInt("interviewSceneShowed") == 0)
