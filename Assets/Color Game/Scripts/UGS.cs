@@ -10,8 +10,9 @@ namespace UniversalScripts
 
         private void Awake()
         {
-            totalMoney = GameEssentials.instance.sd.GetTotalMoney();
-        }
+           //totalMoney = GameEssentials.instance.sd.GetTotalMoney();
+			totalMoney = 0;
+		}
 
         public static void AddMoneyToTotalMoney(bool plus, int val)
         {
@@ -20,7 +21,7 @@ namespace UniversalScripts
             else
                 totalMoney -= val;
 
-            GameEssentials.instance.sd.SetTotalMoney(totalMoney);
+            //GameEssentials.instance.sd.SetTotalMoney(totalMoney);
         }
         
         

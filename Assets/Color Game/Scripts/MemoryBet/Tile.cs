@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using Meta;
 
 public class Tile : MonoBehaviour
 {
@@ -84,6 +85,8 @@ public class Tile : MonoBehaviour
              BomBBlastEffect();
              radialEffect.DOPause();
              callback?.Invoke();
+			 MemoryBetGameEvents.InvokeOnWrongAnswer();
+			 ShopStateController.AlterBankBalance(MemoryBet.betAmount,true);
          });
     }
 

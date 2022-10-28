@@ -6,9 +6,27 @@ public class BackToCheatMasterMissionsCanvas : MonoBehaviour
 {
 
 	[SerializeField] private Button backToMissionsButton;
-	public void OnBackToMissionsPressed()
+
+	private void OnEnable()
+	{
+		MemoryBetGameEvents.WrongAnswer += DisableBackButton;
+	}
+
+	private void OnDisable()
+	{
+		MemoryBetGameEvents.WrongAnswer -= DisableBackButton;
+	}
+
+
+	private void DisableBackButton()
 	{
 		backToMissionsButton.interactable = false;
+	}
+
+
+	public void OnBackToMissionsPressed()
+	{
+		DisableBackButton();
 		int previousMissionIndex = PlayerPrefs.GetInt("lastBuildIndex", 2);
 		SceneManager.LoadScene(previousMissionIndex);
 	}

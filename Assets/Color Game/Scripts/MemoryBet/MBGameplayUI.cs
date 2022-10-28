@@ -9,7 +9,7 @@ public class MBGameplayUI : MonoBehaviour
 
     public TMP_Text betAmountTxt, levelNumTxt, getBtnTxt;
     public GameObject continuePanel;
-    public Button tapToRevealBtn, backBtn;
+    public Button tapToRevealBtn, backBtn,getBtn,continueBtn;
 
     public static int levelNum = 1;
 
@@ -73,6 +73,9 @@ public class MBGameplayUI : MonoBehaviour
         MemoryBet.instance.mbGameplay.ActivateGameplay();
         gameEssentials.shm.Vibrate(15);
         levelNumTxt.text = "Level " + levelNum;
+		
+		if(getBtn)
+			getBtn.gameObject.SetActive(true);
        
     }
 
@@ -86,6 +89,9 @@ public class MBGameplayUI : MonoBehaviour
         gameEssentials.sd.SetMBTotalDollars(gameEssentials.sd.GetMBTotalDollars() + MemoryBet.betAmount);
         MemoryBetUI.instance.totalDollarsTxt.text = Extensions.ScoreShow(MemoryBetUI.instance.totalDollars);
         gameEssentials.shm.Vibrate(12);
+		
+		if(getBtn)
+			getBtn.gameObject.SetActive(false);
     }
 
     public void Back()

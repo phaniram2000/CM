@@ -10,6 +10,8 @@ public class MemoryBet : MonoBehaviour
 
     public static int betAmount;
 
+	public static int TotalAmount;
+
     public Bet bet;
     public GameObject help;
     public MBGamePlayManager mbGameplay;
@@ -21,7 +23,8 @@ public class MemoryBet : MonoBehaviour
     private void Start()
     {
         betAmount = 0;
-    }
+		TotalAmount = 0;
+	}
 
     public void ActivateGameplay()
     {

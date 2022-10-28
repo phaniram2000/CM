@@ -24,6 +24,7 @@ public class MemoryBetUI : UGS
 
     private void Start()
     {
+		print("total dollars : " + totalDollars);
         totalDollarsTxt.text = (totalDollars).ToString();
     }
 
