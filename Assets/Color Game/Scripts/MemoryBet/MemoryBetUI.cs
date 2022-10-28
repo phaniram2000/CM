@@ -51,8 +51,8 @@ public class MemoryBetUI : UGS
     {
         //winUI.gameObject.SetActive(true);
         //gameplayUI.gameObject.SetActive(false);
-		GameEvents.InvokeGameWin();
-        looseUI.gameObject.SetActive(false);
+		//GameEvents.InvokeGameWin();
+       // looseUI.gameObject.SetActive(false);
     }
 
 }
