@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
+using Meta;
 
 public class Tile : MonoBehaviour
 {
@@ -66,7 +67,7 @@ public class Tile : MonoBehaviour
 
     public void BlastTheBalloon(UnityAction callback)
     {
-        balloon.transform.DOScale(Vector3.one * 0.3f, 0.2f).SetEase(Ease.InOutQuad).OnComplete(() =>
+        balloon.transform.DOScale(Vector3.one * 0.005f, 0.2f).SetEase(Ease.InOutQuad).OnComplete(() =>
         {
             GameEssentials.instance.shm.PlayConfettiSound();
             balloon.GetComponent<MeshRenderer>().enabled = false;
@@ -84,6 +85,8 @@ public class Tile : MonoBehaviour
              BomBBlastEffect();
              radialEffect.DOPause();
              callback?.Invoke();
+			 MemoryBetGameEvents.InvokeOnWrongAnswer();
+			 ShopStateController.AlterBankBalance(MemoryBet.betAmount,true);
          });
     }
 
