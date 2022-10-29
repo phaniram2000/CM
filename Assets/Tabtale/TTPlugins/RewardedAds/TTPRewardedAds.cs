@@ -1,6 +1,4 @@
 #if TTP_REWARDED_ADS
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 #if UNITY_IOS

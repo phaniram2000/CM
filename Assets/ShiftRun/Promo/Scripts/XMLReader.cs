@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Xml;
 using System;
-using UnityEngine.UI;
+
 public class XMLReader : MonoBehaviour 
 {
 	XmlNode MainNode;

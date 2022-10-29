@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 
 public class Y_R_N_Pranker : MonoBehaviour

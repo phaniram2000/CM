@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Serialization;
-using System;
 
 namespace Coffee.UIEffects
 {

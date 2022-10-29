@@ -1,6 +1,4 @@
-using System;
 using DG.Tweening;
-using StateMachine;
 using UnityEngine;
 
 public class DCGirlController : MonoBehaviour

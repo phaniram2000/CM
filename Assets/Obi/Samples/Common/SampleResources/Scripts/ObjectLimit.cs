@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
- using System.Collections;
- 
- public class ObjectLimit : MonoBehaviour 
+
+public class ObjectLimit : MonoBehaviour 
  {
  
 	 public float minX = 0;

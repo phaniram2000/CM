@@ -1,11 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using DG.Tweening;
-using Dreamteck.Splines.Primitives;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 
 public class Multipul_opti : MonoBehaviour

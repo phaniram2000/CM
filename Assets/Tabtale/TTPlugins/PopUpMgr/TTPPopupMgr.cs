@@ -1,6 +1,4 @@
 ﻿#if TTP_POPUPMGR
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_IOS
 using System.Runtime.InteropServices;

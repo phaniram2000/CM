@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Dreamteck.Splines;
+
 //using BzKovSoft.ObjectSlicerSamples;
 
 public class PlayerRigid : MonoBehaviour

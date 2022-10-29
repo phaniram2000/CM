@@ -1,6 +1,4 @@
 ﻿#if TTP_PROMOTION
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Tabtale.TTPlugins;
 

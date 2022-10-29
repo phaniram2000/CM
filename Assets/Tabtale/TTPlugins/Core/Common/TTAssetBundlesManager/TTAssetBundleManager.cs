@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using System.Runtime.InteropServices;
 using System.Linq;
 using System.IO;
 
@@ -9,7 +8,6 @@ using System.IO;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using System.Threading;
 
 
 namespace TTPluginsAssetBundles
