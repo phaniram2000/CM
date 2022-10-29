@@ -93,7 +93,7 @@ public class PlayerControl : MonoBehaviour
             if(AudioManager.instance)
                 AudioManager.instance.Pause("Scouter");
         }
-        if (!CheckURNear()) return;
+      //  if (!CheckURNear()) return;
     }
 
    
