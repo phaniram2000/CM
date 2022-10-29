@@ -19,7 +19,7 @@ public class BallBounce : MonoBehaviour
     private static readonly int Idle = Animator.StringToHash("Idle");
     public GameObject WinEffect, Playertext;
     public GameObject AiPlayer, Aiknife;
-
+    public ParticleSystem effect;
     private bool _gameLose, _gameWon;
 
     // public LayerMask layermask;
@@ -112,7 +112,11 @@ public class BallBounce : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Dollar"))
         {
-            other.gameObject.SetActive(false);
+            effect.transform.position = other.transform.position;
+            effect.Play();
+            other.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            other.gameObject.GetComponent<Collider>().enabled = false;
+
         }
     }
 
