@@ -7,9 +7,12 @@ public class MBGameplayUI : MonoBehaviour
 {
     public bool alreadyReveal;
 
-    public TMP_Text betAmountTxt, levelNumTxt, getBtnTxt;
+	[SerializeField] private RectTransform cashIcon;
+	
+	public TMP_Text betAmountTxt, levelNumTxt, getBtnTxt;
     public GameObject continuePanel;
     public Button tapToRevealBtn, backBtn,getBtn,continueBtn;
+	
 
     public static int levelNum = 1;
 
@@ -92,6 +95,10 @@ public class MBGameplayUI : MonoBehaviour
 		
 		if(getBtn)
 			getBtn.gameObject.SetActive(false);
+		
+		
+		if(CoinEffects.instance)
+			CoinEffects.instance.PlayCoinEffects(cashIcon,transform.position);
     }
 
     public void Back()

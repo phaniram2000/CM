@@ -27,7 +27,18 @@ public class BackToCheatMasterMissionsCanvas : MonoBehaviour
 	public void OnBackToMissionsPressed()
 	{
 		DisableBackButton();
+		
+		if(AudioManager.instance)
+			AudioManager.instance.Play("Button");
+		
+		Vibration.Vibrate(30);
+		
 		int previousMissionIndex = PlayerPrefs.GetInt("lastBuildIndex", 2);
 		SceneManager.LoadScene(previousMissionIndex);
+	}
+
+	public void ResetValues()
+	{
+		MemoryBetGameEvents.InvokeOnResetValue();
 	}
 }

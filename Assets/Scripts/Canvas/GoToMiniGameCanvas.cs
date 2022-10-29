@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GoToMiniGameCanvas : MonoBehaviour
 {
 	[SerializeField] private Button miniGameButton;
+	[SerializeField] private Image image;
+	[SerializeField] private int indexNumber;
 
 	private readonly String MiniGame = "Memory Bet";
 
@@ -20,9 +22,24 @@ public class GoToMiniGameCanvas : MonoBehaviour
 		GameEvents.TapToPlay -= OnTapToPlay;
 	}
 
-	
+	private void Start()
+	{
+		int index = SceneManager.GetActiveScene().buildIndex;
+		if (index < indexNumber) return;
+
+		miniGameButton.enabled = true;
+		image.enabled = true;
+	}
+
+
 	public void OnGoToMiniGamePressed()
 	{
+		
+		if(AudioManager.instance)
+			AudioManager.instance.Play("Button");
+		
+		Vibration.Vibrate(30);
+		
 		miniGameButton.interactable = false;
 		SceneManager.LoadScene(MiniGame);
 	}
