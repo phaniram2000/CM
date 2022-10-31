@@ -10,6 +10,8 @@ public class CheatingHusband : MonoBehaviour
 	private static readonly int ToRunHash = Animator.StringToHash("ToRun");
 	private static readonly int ToStandHash = Animator.StringToHash("Stand");
 	private static readonly int SayNoHash = Animator.StringToHash("SayNo");
+	private static readonly int ArrogantHash = Animator.StringToHash("Arrogant");
+	private static readonly int AskHash = Animator.StringToHash("Ask");
 
 	[SerializeField] private Transform finalRunTransform;
 	[SerializeField] private Transform blackmailerFinalTransform;
@@ -81,5 +83,15 @@ public class CheatingHusband : MonoBehaviour
 	private void SayYes()
 	{
 		_animator.SetBool(SayNoHash,false);
+	}
+
+	public void BeingArrogant()
+	{
+		_animator.SetTrigger(ArrogantHash);
+	}
+
+	public void BeingSuspicious()
+	{
+		_animator.SetTrigger(AskHash);
 	}
 }

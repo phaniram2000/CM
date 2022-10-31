@@ -1,4 +1,6 @@
 ﻿#if TTP_REWARDED_INTERSTITIALS && TTP_CORE
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
 #if UNITY_IOS

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 /*  The AssetBundle Manager provides a High-Level API for working with AssetBundles. 

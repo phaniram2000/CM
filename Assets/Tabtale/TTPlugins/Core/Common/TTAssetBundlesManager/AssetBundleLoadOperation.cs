@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.IO;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
 
 #if UNITY_5_3 || UNITY_5_4_OR_NEWER
+using UnityEngine.SceneManagement;
 #endif
 #if ENABLE_IOS_ON_DEMAND_RESOURCES
 using UnityEngine.iOS;

@@ -62,7 +62,8 @@ public class MBGameplayUI : MonoBehaviour
             6 => 9,
             9 => 12,
             12 => 16,
-            16 => Extensions.GetOneFromArray(nums),
+            //16 => Extensions.GetOneFromArray(nums),
+            16 => 16,
             _ => 4
         };
 

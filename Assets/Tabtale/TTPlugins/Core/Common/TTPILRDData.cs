@@ -1,5 +1,8 @@
 ﻿#if TTP_CORE
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Tabtale.TTPlugins
 {

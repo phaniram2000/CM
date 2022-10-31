@@ -24,8 +24,12 @@ public class StealNRun_Currency : MonoBehaviour
    {
       myCollider.enabled = false;
       meshRenderer.enabled = false;
-      effect.transform.position = transform.position;
-      effect.Play();
-      AudioManager.instance.Play("Currency");
+      if (effect)
+      {
+         effect.transform.position = transform.position;
+         effect.Play();
+         AudioManager.instance.Play("Currency");
+      }
+     
    }
 }

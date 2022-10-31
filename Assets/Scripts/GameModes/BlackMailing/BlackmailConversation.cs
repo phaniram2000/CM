@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public class BlackmailConversation : MonoBehaviour
@@ -16,6 +17,9 @@ public class BlackmailConversation : MonoBehaviour
 	[SerializeField] private GameObject money;
 	
 	private Sequence _myFirstSeq;
+
+	[SerializeField] private CheatingHusband husband;
+	[SerializeField] private Blackmailer blackmailer;
 	
 	private void OnEnable()
 	{
@@ -43,10 +47,12 @@ public class BlackmailConversation : MonoBehaviour
 		{
 			AudioManager.instance.Play("Button");
 			AudioManager.instance.Play("LookWhatIHaveFound");
+			blackmailer.ToAsk();
 			DOVirtual.DelayedCall(1.5f, () =>
 			{
 				couplesResponses[1].SetActive(true);
 				AudioManager.instance.Play("WhatDoYouHave");
+				husband.BeingSuspicious();
 			});
 		}
 		
@@ -63,6 +69,7 @@ public class BlackmailConversation : MonoBehaviour
 		
 		if(AudioManager.instance)
 			AudioManager.instance.Play("WantToJoin");
+		blackmailer.ToAsk();
 	}
 
 	public void PositivePic()
@@ -81,6 +88,7 @@ public class BlackmailConversation : MonoBehaviour
 			AudioManager.instance.Play("Button");
 			couplesResponses[2].SetActive(true);
 			AudioManager.instance.Play("WhatDoYouPlan");
+			husband.BeingArrogant();
 		}
 		Vibration.Vibrate(30);
 	}
@@ -116,7 +124,12 @@ public class BlackmailConversation : MonoBehaviour
 		{
 			AudioManager.instance.Play("Button");
 			AudioManager.instance.Play("WillSendItToYourWife");
-			DOVirtual.DelayedCall(1.5f, () => AudioManager.instance.Play("NoPlease"));
+			blackmailer.ToAsk();
+			DOVirtual.DelayedCall(1.5f, () =>
+			{
+				AudioManager.instance.Play("NoPlease");
+				husband.BeingArrogant();
+			});
 		}
 		Vibration.Vibrate(30);
 
@@ -134,6 +147,7 @@ public class BlackmailConversation : MonoBehaviour
 		{
 			AudioManager.instance.Play("Button");
 			AudioManager.instance.Play("WillSendItToYou");
+			blackmailer.ToAsk();
 		}
 	}
 
@@ -145,7 +159,7 @@ public class BlackmailConversation : MonoBehaviour
 		Sequence mySeq = DOTween.Sequence();
 		mySeq.AppendCallback(() => couplesResponses[4].SetActive(true));
 		mySeq.AppendCallback(()=> DOVirtual.DelayedCall(5f,SpawnMoney));
-		mySeq.AppendCallback(BlackmailingEvents.InvokeFinalWin);
+		//mySeq.AppendCallback(BlackmailingEvents.InvokeFinalWin);
 		mySeq.AppendInterval(3f);
 		mySeq.AppendCallback(DisableAllConvoCanvas);
 		mySeq.AppendInterval(1.5f);
@@ -155,7 +169,13 @@ public class BlackmailConversation : MonoBehaviour
 		{
 			AudioManager.instance.Play("Button");
 			AudioManager.instance.Play("WantOneMillionDollars");
-			DOVirtual.DelayedCall(1.5f, () => AudioManager.instance.Play("OkMoneyCredited"));
+			blackmailer.ToAsk();
+			DOVirtual.DelayedCall(1.5f, () =>
+			{
+				AudioManager.instance.Play("OkMoneyCredited");
+				husband.BeingSuspicious();
+				DOVirtual.DelayedCall(1f,BlackmailingEvents.InvokeFinalWin);
+			});
 		}
 		Vibration.Vibrate(30);
 	}
@@ -187,6 +207,8 @@ public class BlackmailConversation : MonoBehaviour
 		{
 			AudioManager.instance.Play("Button");
 			AudioManager.instance.Play("Want10Dollars");
+			blackmailer.ToAsk();
+
 		}
 	}
 	
@@ -207,7 +229,12 @@ public class BlackmailConversation : MonoBehaviour
 		if (AudioManager.instance)
 		{
 			AudioManager.instance.Play("WhatAreYouDoing");
-			DOVirtual.DelayedCall(3f, () => AudioManager.instance.Play("NoneOfYourBusiness"));
+			DOVirtual.DelayedCall(3f, () =>
+			{
+				AudioManager.instance.Play("NoneOfYourBusiness");
+				husband.BeingArrogant();
+			});
+			blackmailer.ToAsk();
 		}
 	}
 

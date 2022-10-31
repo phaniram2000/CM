@@ -1,4 +1,5 @@
-﻿namespace Tabtale.TTPlugins
+﻿using System;
+namespace Tabtale.TTPlugins
 {
     public enum Locations
     {

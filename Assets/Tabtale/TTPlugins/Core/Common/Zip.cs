@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System;
 using System.Runtime.InteropServices;
 using Ionic.Zip;
+using System.Text;
 using System.IO;
 
 public class ZipUtil

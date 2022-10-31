@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GoToMiniGameCanvas : MonoBehaviour
 {
 	[SerializeField] private Button miniGameButton;
-	[SerializeField] private Image image;
+	[SerializeField] private Image image,finger;
 	[SerializeField] private int indexNumber;
 
 	private readonly String MiniGame = "Memory Bet";
@@ -29,6 +29,10 @@ public class GoToMiniGameCanvas : MonoBehaviour
 
 		miniGameButton.enabled = true;
 		image.enabled = true;
+		if (finger)
+		{
+			finger.enabled = true;
+		}
 	}
 
 
@@ -42,6 +46,7 @@ public class GoToMiniGameCanvas : MonoBehaviour
 		
 		miniGameButton.interactable = false;
 		SceneManager.LoadScene(MiniGame);
+		
 	}
 	
 	private void OnTapToPlay()

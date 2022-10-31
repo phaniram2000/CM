@@ -1,6 +1,9 @@
 ﻿#if TTP_OPENADS && TTP_CORE
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Scripting;
+using UnityEngine.UI;
 
 namespace Tabtale.TTPlugins
 {

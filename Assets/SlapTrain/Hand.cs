@@ -11,6 +11,7 @@ public class Hand : MonoBehaviour
 			player.toSlap = true;
 			if(AudioManager.instance)		
 				AudioManager.instance.Play("Slap");
+			Vibration.Vibrate(30);
 		}
 		
 		if(other.CompareTag("Obstacle"))
@@ -22,6 +23,10 @@ public class Hand : MonoBehaviour
 			var activePhone = other.GetComponent<Pedestrian>().GetActivePhone();
 			//activePhone.transform.parent = player.transform;
 			player.MoveThePhoneToBag(activePhone);
+			Vibration.Vibrate(30);
+
+			if(AudioManager.instance)		
+				AudioManager.instance.Play("Slap");
 			return;
 		}
 		

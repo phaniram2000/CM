@@ -26,12 +26,12 @@ public class GameManagerTrain : MonoBehaviour
 
 	private void OnEnable()
 	{
-		GameEventsTrain.TapToPlay += OnTapToPlay;
+		GameEvents.TapToPlay += OnTapToPlay;
 	}
 
 	private void OnDisable()
 	{
-		GameEventsTrain.TapToPlay -= OnTapToPlay;
+		GameEvents.TapToPlay -= OnTapToPlay;
 	}
 
 	private void Awake()
@@ -63,49 +63,22 @@ public class GameManagerTrain : MonoBehaviour
 		if (totalSlappedPedestrians == _totalPedestrians) fillImage.fillAmount = 1f;
 	}
 
-	public void ReloadButton()
-	{
-		if(GAScript.Instance)
-			GAScript.Instance.LevelFail(PlayerPrefs.GetInt("level", 1).ToString());
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-	}
-	
-	public void NextButton()
-	{
-		if(GAScript.Instance)
-			GAScript.Instance.LevelCompleted(PlayerPrefs.GetInt("level", 1).ToString());
-		Debug.Log(PlayerPrefs.GetInt("level", 1).ToString());
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		if (PlayerPrefs.GetInt("level") >= (SceneManager.sceneCountInBuildSettings) - 1)
-		{
-			PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("Level", 1) + 1);
-			var i = Random.Range(1, SceneManager.sceneCountInBuildSettings);
-			PlayerPrefs.SetInt("ThisLevel", i);
-			SceneManager.LoadScene(i);
-		}
-		else
-		{
-			PlayerPrefs.SetInt("level", SceneManager.GetActiveScene().buildIndex + 1);
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-		}
-
-	}
 
 	private void OnTapToPlay()
 	{
-		tapToPlay.SetActive(false);
+	//	tapToPlay.SetActive(false);
 	}
 
 	public void RemoveTheHeart()
 	{
 		if (totalHearts == 0)
 		{
-			DOVirtual.DelayedCall(2f, ShowLostUi);
+			DOVirtual.DelayedCall(2f, ()=>GameEvents.InvokeGameLose(-1));
 			return;
 		}
 		
-		heartImages[^1].SetActive(false);
-		heartImages.RemoveAt(heartImages.Count - 1);
+//		heartImages[^1].SetActive(false);
+//		heartImages.RemoveAt(heartImages.Count - 1);
 		totalHearts--;
 		print("Here");
 	}

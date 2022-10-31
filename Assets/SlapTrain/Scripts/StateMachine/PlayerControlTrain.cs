@@ -89,7 +89,7 @@ public class PlayerControlTrain : MonoBehaviour
 		{
 			if (!hasTappedToPlay)
 			{
-				GameEventsTrain.InvokeTapToPlay();
+				GameEvents.InvokeTapToPlay();
 				hasTappedToPlay = true;
 				if(AudioManager.instance)
 					AudioManager.instance.Play("Train");
@@ -129,7 +129,7 @@ public class PlayerControlTrain : MonoBehaviour
 		if (hasTappedToPlay) return true;
 		
 		if(InputExtensions.GetFingerDown())
-			GameEventsTrain.InvokeTapToPlay();
+			GameEvents.InvokeTapToPlay();
 		
 		hasTappedToPlay = true;
 		return hasTappedToPlay;
@@ -164,7 +164,8 @@ public class PlayerControlTrain : MonoBehaviour
 		if (GameManagerTrain.Instance.totalHearts <= 0)
 		{
 			ActivateRagdoll();
-			DOVirtual.DelayedCall(2f, () => { GameManagerTrain.Instance.ShowLostUi(); });
+			//DOVirtual.DelayedCall(2f, () => { GameManagerTrain.Instance.ShowLostUi(); });
+			GameEvents.InvokeGameLose(-1);
 			if (AudioManager.instance)
 			{
 				AudioManager.instance.Pause("Hurt");

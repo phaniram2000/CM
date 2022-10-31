@@ -16,6 +16,7 @@ public class Blackmailer : MonoBehaviour
 	private static readonly int ToMoveNearCoupleHash = Animator.StringToHash("ToMoveNearCouple");
 	private static readonly int ToStopHash = Animator.StringToHash("Stop");
 	private static readonly int ToLoseHash = Animator.StringToHash("ToLose");
+	private static readonly int AskHash = Animator.StringToHash("Ask");
 
 	[SerializeField] private int totalPhotosToTake = 8;
 	[SerializeField] private TMP_Text countText;
@@ -144,4 +145,8 @@ public class Blackmailer : MonoBehaviour
 		_animator.SetTrigger(ToLoseHash);
 	}
 
+	public void ToAsk()
+	{
+		_animator.SetTrigger(AskHash);
+	}
 }

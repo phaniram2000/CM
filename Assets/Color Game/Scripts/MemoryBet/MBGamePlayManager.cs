@@ -60,7 +60,7 @@ public class MBGamePlayManager : MonoBehaviour
             case 16:
                 Camera.main.DOFieldOfView(70f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(4);
-                maxBombCounts = Random.Range(4, 6);
+                maxBombCounts = Random.Range(5, 7);
 				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(16);
                 break;
         }

@@ -8,12 +8,12 @@ public class MovingTrain : MonoBehaviour
 
 	private void OnEnable()
 	{
-		GameEventsTrain.TapToPlay += OnTapToPlay;
+		GameEvents.TapToPlay += OnTapToPlay;
 	}
 
 	private void OnDisable()
 	{
-		GameEventsTrain.TapToPlay -= OnTapToPlay;
+		GameEvents.TapToPlay -= OnTapToPlay;
 	}
 
 	private void Start()

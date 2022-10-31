@@ -1,4 +1,8 @@
-﻿namespace Tabtale.TTPlugins
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Tabtale.TTPlugins
 {
     public class TTPEvents
     {
@@ -23,5 +27,7 @@
 
         public const string RATE_US_BUTTON = "rateUsButton";
         public const string RATE_US_POPUP = "rateUsPopup";
+
+        public const string ATT_DID_SHOW = "aTTDidShow";
     }
 }

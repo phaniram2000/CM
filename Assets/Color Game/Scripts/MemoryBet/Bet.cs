@@ -125,6 +125,7 @@ public class Bet : MonoBehaviour
         MemoryBet.instance.ActivateGameplay();
         MemoryBetUI.instance.ActivateGameplayUI();
 		
+        Vibration.Vibrate(30);
 		
     }
 }

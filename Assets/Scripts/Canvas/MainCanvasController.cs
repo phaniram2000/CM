@@ -240,9 +240,9 @@ public class MainCanvasController : MonoBehaviour
 
 	public void NextLevel()
 	{
-		if (PlayerPrefs.GetInt("levelNo", 1) < SceneManager.sceneCountInBuildSettings - 1)
+		if (PlayerPrefs.GetInt("levelNo", 1) < SceneManager.sceneCountInBuildSettings - 2)
 		{
-			if (PlayerPrefs.GetInt("lastBuildIndex", 2) < SceneManager.sceneCountInBuildSettings - 1)
+			if (PlayerPrefs.GetInt("lastBuildIndex", 2) < SceneManager.sceneCountInBuildSettings - 2)
 				PlayerPrefs.SetInt("lastBuildIndex", PlayerPrefs.GetInt("lastBuildIndex", 2) + 1);
 			else
 				PlayerPrefs.SetInt("lastBuildIndex", Random.Range(2, SceneManager.sceneCountInBuildSettings));

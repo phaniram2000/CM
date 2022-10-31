@@ -8,6 +8,7 @@ public class EndOfLevelTrigger : MonoBehaviour
 		if (!other.CompareTag("Player")) return;
 
 		GameEventsTrain.InvokeEndLevel();
-		DOVirtual.DelayedCall(2f, () => { GameManagerTrain.Instance.ShowWinUi(); });
+	GameEvents.InvokeGameWin();
+	//	DOVirtual.DelayedCall(2f, () => { GameManagerTrain.Instance.ShowWinUi(); });
 	}
 }
