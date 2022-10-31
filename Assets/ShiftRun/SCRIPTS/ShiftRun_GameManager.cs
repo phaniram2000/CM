@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Dreamteck.Splines;
+﻿using UnityEngine;
+
 public class ShiftRun_GameManager : MonoBehaviour
 {
     public static ShiftRun_GameManager instance;

@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
-using StateMachine;
 using UnityEngine;
 
 public class JCMeterController : MonoBehaviour

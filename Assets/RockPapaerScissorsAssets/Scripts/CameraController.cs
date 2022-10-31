@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using Input = UnityEngine.Windows.Input;
 
 namespace RPS
 {

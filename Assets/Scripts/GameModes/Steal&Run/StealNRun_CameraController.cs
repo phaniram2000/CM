@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
 
 public class StealNRun_CameraController : SingletonInstance<StealNRun_CameraController>

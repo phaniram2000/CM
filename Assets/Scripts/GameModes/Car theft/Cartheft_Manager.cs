@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using RPS;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 
 enum Stages
 {
@@ -86,10 +82,13 @@ public class Cartheft_Manager : MonoBehaviour
     {
     }
 
+    public GameObject hint;
     private void LockerUpdate()
     {
+        hint.SetActive(true);
         if (Input.GetMouseButtonDown(0))
         {
+            hint.SetActive(false);
             arrowHolderTween.Kill();
             _transform.DOScale(Vector3.zero, .3f).SetEase(Ease.InBounce);
             

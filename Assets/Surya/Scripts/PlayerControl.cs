@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using DG.Tweening;
 using Dreamteck.Splines;
@@ -93,7 +91,7 @@ public class PlayerControl : MonoBehaviour
             if(AudioManager.instance)
                 AudioManager.instance.Pause("Scouter");
         }
-        if (!CheckURNear()) return;
+      //  if (!CheckURNear()) return;
     }
 
    

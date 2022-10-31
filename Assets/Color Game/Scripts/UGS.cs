@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace UniversalScripts 
@@ -10,17 +8,32 @@ namespace UniversalScripts
 
         private void Awake()
         {
-            totalMoney = GameEssentials.instance.sd.GetTotalMoney();
-        }
+           //totalMoney = GameEssentials.instance.sd.GetTotalMoney();
+			totalMoney = 0;
+		}
 
-        public static void AddMoneyToTotalMoney(bool plus, int val)
+		private void OnEnable()
+		{
+			GameEvents.GameLose += OnGameLose;
+			MemoryBetGameEvents.ResetValue += OnResetValue;
+		}
+
+		private void OnDisable()
+		{
+			GameEvents.GameLose -= OnGameLose;
+			MemoryBetGameEvents.ResetValue -= OnResetValue;
+		}
+
+		
+
+		public static void AddMoneyToTotalMoney(bool plus, int val)
         {
             if (plus)
                 totalMoney += val;
             else
                 totalMoney -= val;
 
-            GameEssentials.instance.sd.SetTotalMoney(totalMoney);
+            //GameEssentials.instance.sd.SetTotalMoney(totalMoney);
         }
         
         
@@ -28,6 +41,18 @@ namespace UniversalScripts
         {
             print(message);
         }
+		
+		
+		private void OnGameLose(int obj)
+		{
+			totalMoney = 0;
+		}
+		
+		private void OnResetValue()
+		{
+			totalMoney = 0;
+		}
+
     }
 }
 

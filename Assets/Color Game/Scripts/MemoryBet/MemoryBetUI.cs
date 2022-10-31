@@ -24,6 +24,7 @@ public class MemoryBetUI : UGS
 
     private void Start()
     {
+		print("total dollars : " + totalDollars);
         totalDollarsTxt.text = (totalDollars).ToString();
     }
 
@@ -51,8 +52,8 @@ public class MemoryBetUI : UGS
     {
         //winUI.gameObject.SetActive(true);
         //gameplayUI.gameObject.SetActive(false);
-		GameEvents.InvokeGameWin();
-        looseUI.gameObject.SetActive(false);
+		//GameEvents.InvokeGameWin();
+       // looseUI.gameObject.SetActive(false);
     }
 
 }

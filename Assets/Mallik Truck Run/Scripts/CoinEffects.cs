@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
-using Dreamteck.Splines.Primitives;
 using UnityEngine;
 
 public class CoinEffects : Singleton<CoinEffects>

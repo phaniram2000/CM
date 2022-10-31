@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
-public class GameEssentials : Singleton<GameEssentials>
+﻿public class GameEssentials : Singleton<GameEssentials>
 {
     public static string remoteConfigVal = "0";
 

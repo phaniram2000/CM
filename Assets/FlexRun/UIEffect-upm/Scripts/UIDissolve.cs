@@ -1,11 +1,6 @@
-﻿using System;
-using UnityEngine;
-using UnityEditor;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
-using System.Text;
-using System.Linq;
-using System.IO;
 
 namespace Coffee.UIEffects
 {

@@ -7,9 +7,12 @@ public class MBGameplayUI : MonoBehaviour
 {
     public bool alreadyReveal;
 
-    public TMP_Text betAmountTxt, levelNumTxt, getBtnTxt;
+	[SerializeField] private RectTransform cashIcon;
+	
+	public TMP_Text betAmountTxt, levelNumTxt, getBtnTxt;
     public GameObject continuePanel;
-    public Button tapToRevealBtn, backBtn;
+    public Button tapToRevealBtn, backBtn,getBtn,continueBtn;
+	
 
     public static int levelNum = 1;
 
@@ -59,7 +62,8 @@ public class MBGameplayUI : MonoBehaviour
             6 => 9,
             9 => 12,
             12 => 16,
-            16 => Extensions.GetOneFromArray(nums),
+            //16 => Extensions.GetOneFromArray(nums),
+            16 => 16,
             _ => 4
         };
 
@@ -73,6 +77,9 @@ public class MBGameplayUI : MonoBehaviour
         MemoryBet.instance.mbGameplay.ActivateGameplay();
         gameEssentials.shm.Vibrate(15);
         levelNumTxt.text = "Level " + levelNum;
+		
+		if(getBtn)
+			getBtn.gameObject.SetActive(true);
        
     }
 
@@ -86,6 +93,13 @@ public class MBGameplayUI : MonoBehaviour
         gameEssentials.sd.SetMBTotalDollars(gameEssentials.sd.GetMBTotalDollars() + MemoryBet.betAmount);
         MemoryBetUI.instance.totalDollarsTxt.text = Extensions.ScoreShow(MemoryBetUI.instance.totalDollars);
         gameEssentials.shm.Vibrate(12);
+		
+		if(getBtn)
+			getBtn.gameObject.SetActive(false);
+		
+		
+		if(CoinEffects.instance)
+			CoinEffects.instance.PlayCoinEffects(cashIcon,transform.position);
     }
 
     public void Back()

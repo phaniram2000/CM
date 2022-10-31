@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GestureRecognizer;
+﻿using GestureRecognizer;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -119,9 +119,13 @@ public class Bet : MonoBehaviour
     public void BetBtnPressed()
     {
         GameEssentials.instance.shm.PlayBetBtnPress();
+		MemoryBetGameEvents.InvokeOnBetButtonPressed();
         GameEssentials.instance.sd.SetMBTotalDollars(totalDollars - MemoryBet.betAmount);
         MemoryBetUI.instance.totalDollarsTxt.text = Extensions.ScoreShow(totalDollars);
         MemoryBet.instance.ActivateGameplay();
         MemoryBetUI.instance.ActivateGameplayUI();
+		
+        Vibration.Vibrate(30);
+		
     }
 }

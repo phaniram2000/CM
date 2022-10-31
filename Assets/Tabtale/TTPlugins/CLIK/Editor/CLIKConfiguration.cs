@@ -5,24 +5,17 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 using Google;
-using GooglePlayServices;
-using Google;
 using Tabtale.TTPlugins;
 using TTPlugins.DependenciesFile;
 using TTPlugins.PomFile;
 using UnityEditor;
 using UnityEditor.Android;
-using UnityEditor.AnimatedValues;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 #if UNITY_IOS
 using UnityEditor.iOS.Xcode;
 #endif
 using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
-using Object = System.Object;
-using System.Text.RegularExpressions;
 
 // ReSharper disable InconsistentNaming
 
@@ -353,6 +346,18 @@ public class CLIKConfiguration : EditorWindow
         return false;
     }
 
+    public static bool IsAndroid()
+    {
+        var isAndroid = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
+        return isAndroid;
+    }
+
+    public static bool IsInvalidPlatform()
+    {
+        return ((IsAndroid() && _configuration.globalConfig.store != "google") ||
+                (!IsAndroid() && _configuration.globalConfig.store != "apple"));
+    }
+
     string newInAppId = "";
     string newInAppIapId = "";
     int newInAppType = 0;
@@ -362,10 +367,9 @@ public class CLIKConfiguration : EditorWindow
     private void OnGUI()
     {
         EditorGUILayout.Space();
-        var isAndroid = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
         GUILayout.Label("Mode: " + (_configuration.globalConfig.testMode ? "Test" : "Production"));
         var currentId =
-            PlayerSettings.GetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS);
+            PlayerSettings.GetApplicationIdentifier(IsAndroid() ? BuildTargetGroup.Android : BuildTargetGroup.iOS);
         if (CompareVersion() < 0)
             GUILayout.Label(
                 $"Current Unity version ({Application.unityVersion}) is lower than required ({Constants.REQUIRED_UNITY_VERSION})",
@@ -376,13 +380,12 @@ public class CLIKConfiguration : EditorWindow
                 _redLabel);
             if (GUILayout.Button("Change Application Id"))
             {
-                PlayerSettings.SetApplicationIdentifier(isAndroid ? BuildTargetGroup.Android : BuildTargetGroup.iOS,
+                PlayerSettings.SetApplicationIdentifier(IsAndroid() ? BuildTargetGroup.Android : BuildTargetGroup.iOS,
                     _configuration.globalConfig.bundleId);
             }
         }
 
-        if ((isAndroid && _configuration.globalConfig.store != "google") ||
-            (!isAndroid && _configuration.globalConfig.store != "apple"))
+        if (IsInvalidPlatform())
         {
             GUILayout.Label("Configuration does not match current build target!", _redLabel);
         }
@@ -1826,12 +1829,11 @@ public class CLIKConfiguration : EditorWindow
             serverDomain = "http://" + serverDomain;
         }
 
-        var isAndroid = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
-        var store = isAndroid ? "google" : "apple";
+        var store = IsAndroid() ? "google" : "apple";
         var url = (serverDomain ?? "http://dashboard.ttpsdk.info") + "/clik-packages/" + store + "/" + bundleId;
         Debug.Log("BuilderDetermineIncludedServices::url=" + url);
         string resStr = null;
-        if (!isAndroid)
+        if (!IsAndroid())
         {
             IOSResolver.PodToolExecutionViaShellEnabled = false;
         }

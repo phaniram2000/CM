@@ -32,27 +32,36 @@ public class MBGamePlayManager : MonoBehaviour
         switch (tilesCount)
         {
             case 4:
+				Camera.main.DOFieldOfView(60f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(0);
                 maxBombCounts = 1;
+				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(4);
                 break;
             case 6:
+				Camera.main.DOFieldOfView(60f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(1);
                 maxBombCounts = Random.Range(2,3);
+				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(6);
                // maxBombCounts = 1;
                 break;
             case 9:
+				Camera.main.DOFieldOfView(60f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(2);
                 maxBombCounts = Random.Range(2, 4);
+				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(9);
                 break;
             case 12:
+				Camera.main.DOFieldOfView(65f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(3);
                 maxBombCounts = Random.Range(3, 5);
-               // maxBombCounts = 1;
+				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(12);
+				// maxBombCounts = 1;
                 break;
             case 16:
-                Camera.main.DOFieldOfView(65f, 0.1f).SetEase(Ease.Flash);
+                Camera.main.DOFieldOfView(70f, 0.1f).SetEase(Ease.Flash);
                 ActivatingBlockTilesBasedOnCount(4);
-                maxBombCounts = Random.Range(4, 6);
+                maxBombCounts = Random.Range(5, 7);
+				MemoryBetGameEvents.InvokeOnIncreasePlatformSize(16);
                 break;
         }
     }
