@@ -138,7 +138,12 @@ public class CameraFxControllerR : MonoBehaviour
 
 	private void ResetCollisionCooldown() => _inCollisionCoolDown = false;
 
-	private void OnPlayerDeath() => SetSpeedLinesStatus(false);
+	private void OnPlayerDeath()
+	{
+		
+		GameEvents.InvokeGameLose(-1);
+		//SetSpeedLinesStatus(false);
+	}
 
 	private void OnReachEndOfTrack() => SetSpeedLinesStatus(true);
 

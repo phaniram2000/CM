@@ -24,7 +24,7 @@ namespace StateMachine
 
 		private void OnEnable()
 		{
-			GameEventsR.TapToPlay += OnTapToPlay;
+			GameEvents.TapToPlay += OnTapToPlay;
 			GameEventsR.ReachEndOfTrack += OnReachEndOfTrack;
 			GameEventsR.RunOutOfPassengers += OnStopOnBonusRamp;
 			GameEventsR.PlayerDeath += OnPlayerDeath;
@@ -32,7 +32,7 @@ namespace StateMachine
 
 		private void OnDisable()
 		{
-			GameEventsR.TapToPlay -= OnTapToPlay;
+			GameEvents.TapToPlay -= OnTapToPlay;
 			GameEventsR.ReachEndOfTrack -= OnReachEndOfTrack;
 			GameEventsR.RunOutOfPassengers -= OnStopOnBonusRamp;
 			GameEventsR.PlayerDeath -= OnPlayerDeath;

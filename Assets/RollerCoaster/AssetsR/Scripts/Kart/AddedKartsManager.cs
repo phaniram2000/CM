@@ -268,6 +268,7 @@ namespace Kart
 			{
 				ExplodeMainKart(collisionPoint);
 				GameEventsR.InvokePlayerDeath();
+				GameEvents.InvokeGameLose(-1);
 			}
 
 			CameraFxControllerR.only.ScreenShake(5f);

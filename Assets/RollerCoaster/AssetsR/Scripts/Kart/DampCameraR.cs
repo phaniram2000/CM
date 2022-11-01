@@ -36,7 +36,7 @@ namespace Kart
 			GameEventsR.PlayerDeath += OnPlayerDeath;
 			
 			GameEventsR.ReachEndOfTrack += OnReachEndOfTrack;
-			GameEventsR.GameWin += OnMainKartEndBonusRampMovement;
+			GameEvents.GameWin += OnMainKartEndBonusRampMovement;
 		}
 
 		private void OnDisable()
@@ -47,7 +47,7 @@ namespace Kart
 			GameEventsR.PlayerDeath -= OnPlayerDeath;
 			
 			GameEventsR.ReachEndOfTrack -= OnReachEndOfTrack;
-			GameEventsR.GameWin -= OnMainKartEndBonusRampMovement;
+			GameEvents.GameWin -= OnMainKartEndBonusRampMovement;
 		}
 
 		private void Awake()

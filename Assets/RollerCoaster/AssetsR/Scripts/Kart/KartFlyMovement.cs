@@ -97,7 +97,7 @@ namespace Kart
 			DOTween.To(() => _currentForwardSpeed, value => _currentForwardSpeed = value, 0f, fallTweenDuration)
 				.SetEase(Ease.OutQuint)
 				.OnUpdate(() => _transform.position += transform.forward * (_currentForwardSpeed * Time.deltaTime))
-				.OnComplete(GameEventsR.InvokeGameWin);
+				.OnComplete(GameEvents.InvokeGameWin);
 
 			_transform.DOMoveY(_lowestAllowedY, fallTweenDuration * .75f).SetEase(fallTweenEase);
 		}

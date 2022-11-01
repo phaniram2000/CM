@@ -17,18 +17,19 @@ public class MainCanvasControllerR : MonoBehaviour
 	[SerializeField] private GameObject warningPanel;
 	
 	private Color _originalRedColor, _lighterRedColor;
-	private bool _hasTapped, _hasLost;
+	public bool _hasTapped, _hasLost;
 	private Sequence _emojiSequence;
 	private Tweener _redOverlayTween;
 	private bool _hasWon;
 	private static int LevelAttemptsData = 0;
 	private void OnEnable()
 	{
+		GameEvents.TapToPlay += TapToPlay;
 		GameEventsR.KartCrash += OnObstacleCollision;
 		GameEventsR.MainKartCrash += OnObstacleCollision;
 
-		GameEventsR.PlayerDeath += OnGameLose;
-		GameEventsR.GameWin += OnGameWin;
+		//GameEventsR.PlayerDeath += OnGameLose;
+		GameEvents.GameWin += OnGameWin;
 
 		GameEventsR.ObstacleWarningOn += CanEnableWarningPanel;
 		GameEventsR.ObstacleWarningOff += DontEnableWarningPanel;
@@ -36,14 +37,16 @@ public class MainCanvasControllerR : MonoBehaviour
 
 	private void OnDisable()
 	{
+		GameEvents.TapToPlay -= TapToPlay;
 		GameEventsR.KartCrash -= OnObstacleCollision;
 		GameEventsR.MainKartCrash -= OnObstacleCollision;
 		
-		GameEventsR.PlayerDeath -= OnGameLose;
-		GameEventsR.GameWin -= OnGameWin;
+		//GameEventsR.PlayerDeath -= OnGameLose;
+		GameEvents.GameWin -= OnGameWin;
 		
 		GameEventsR.ObstacleWarningOn -= CanEnableWarningPanel;
 		GameEventsR.ObstacleWarningOff -= DontEnableWarningPanel;
+
 	}
 
 	private void Awake() => DOTween.KillAll();
@@ -93,8 +96,8 @@ public class MainCanvasControllerR : MonoBehaviour
 		
 		if(!EventSystem.current) { print("no event system"); return; }
 		
-		if(!EventSystem.current.IsPointerOverGameObject(InputExtensionsR.IsUsingTouch ? Input.GetTouch(0).fingerId : -1))
-			TapToPlay();
+		// if(!EventSystem.current.IsPointerOverGameObject(InputExtensionsR.IsUsingTouch ? Input.GetTouch(0).fingerId : -1))
+		// 	TapToPlay();
 		
 	}
 
@@ -134,11 +137,12 @@ public class MainCanvasControllerR : MonoBehaviour
 
 	private void TapToPlay()
 	{
+		Debug.Log("taptoplay");
 		_hasTapped = true;
 		holdToAim.SetActive(false);
 		skipLevel.SetActive(false);
 		
-		GameEventsR.InvokeTapToPlay();
+	//GameEvents.InvokeTapToPlay();
 	}
 
 	public void Retry()
@@ -208,7 +212,7 @@ public class MainCanvasControllerR : MonoBehaviour
 		if (_hasWon) return;
 		
 		_hasWon = true;
-		DOVirtual.DelayedCall(1f, EnableVictoryObjects);
+		//DOVirtual.DelayedCall(1f, EnableVictoryObjects);
 
 		// if (GAScript.Instance)
 		// {
