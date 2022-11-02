@@ -46,13 +46,16 @@ namespace Dreamteck.Splines
                     _followSpeed = value;
                     Spline.Direction lastDirection = _direction;
                     if (_followSpeed < 0f)
-                    {
+					{
+						return;
                         direction = Spline.Direction.Backward;
+						
                     }
                     if(_followSpeed > 0f)
                     {
                         direction = Spline.Direction.Forward;
-                    }
+						
+					}
                 }
             }
         }
