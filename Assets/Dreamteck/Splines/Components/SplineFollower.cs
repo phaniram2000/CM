@@ -49,12 +49,12 @@ namespace Dreamteck.Splines
 					{
 						return;
                         direction = Spline.Direction.Backward;
-						print("In Back");
+						
                     }
                     if(_followSpeed > 0f)
                     {
                         direction = Spline.Direction.Forward;
-						print("In Forward");
+						
 					}
                 }
             }

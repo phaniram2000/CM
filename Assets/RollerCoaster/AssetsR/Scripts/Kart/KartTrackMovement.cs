@@ -82,7 +82,7 @@ namespace Kart
 		{
 			_follower.followSpeed = currentSpeed;
 			_follower.followSpeed *= 1f - _brakeForce;
-			print("Acc");
+			
 		}
 
 		public void Brake()
