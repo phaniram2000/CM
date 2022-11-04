@@ -10,6 +10,7 @@ namespace PathCreation.Examples
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
         float distanceTravelled;
+        public bool move;
 
         void Start() {
             if (pathCreator != null)
@@ -18,10 +19,23 @@ namespace PathCreation.Examples
                 pathCreator.pathUpdated += OnPathChanged;
             }
         }
+        private void OnEnable()
+        {
+            GameEvents.TapToPlay += taptoplay;
+        }
 
+        private void OnDisable()
+        {
+            GameEvents.TapToPlay -= taptoplay;
+        }
+
+        private void taptoplay()
+        {
+            move = true;
+        }
         void Update()
         {
-            if (pathCreator != null)
+            if (pathCreator != null&& move)
             {
                 distanceTravelled += speed * Time.deltaTime;
                 transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);

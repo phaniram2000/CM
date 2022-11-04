@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class TruckMove : MonoBehaviour
     public float speed;
     public ParticleSystem BlastParticle;
     public AudioSource blast;
+
+    public bool move;
     // Update is called once per frame
     void Update()
     {
@@ -14,8 +17,13 @@ public class TruckMove : MonoBehaviour
     }
     void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(move == true)
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
     }
+
+   
 
     private void OnTriggerEnter(Collider other)
     {

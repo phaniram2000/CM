@@ -170,11 +170,12 @@ public class Player : MonoBehaviour
         skin = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
         skin1 = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
         rb = GetComponent<Rigidbody>();
-        movement = true;
+      //  movement = true;
         isControl = false;
         isControlFall = false;
         //isControlWork = false;
         playerHealth = 10;
+        
         Vibration.Init();
 //        coinsText.text = coinsCount.ToString();
     }
@@ -197,7 +198,9 @@ public class Player : MonoBehaviour
                 PlayerAnim.Play("HipHopDancing");
             }
         }
-        SwipeContol();
+       
+            SwipeContol();
+        
         if (Input.GetMouseButton(0))
         v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, FOV, .5f * Time.deltaTime);
@@ -205,6 +208,7 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(movement)
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
@@ -272,8 +276,7 @@ public class Player : MonoBehaviour
 
     private void StartTime()
     {
-        if (Input.GetMouseButtonDown(0))
-            Time.timeScale = 1;
+        movement = true;
     }
 
     public void cameramove()
@@ -355,7 +358,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.CompareTag("MainTruck"))
         {
             ChangeAnimationState(PLAYER_RUN);
-            Time.timeScale = 0;
+         //   Time.timeScale = 0;
         }
 
         if (other.gameObject.CompareTag("Run"))
