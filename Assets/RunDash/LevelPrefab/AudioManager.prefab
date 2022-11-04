@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8411562374027517463}
-  - component: {fileID: 8411562374027517460}
+  - component: {fileID: 3997649855795439950}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -27,11 +27,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 74.41353, y: -636.6515, z: 1902.3546}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8411562374027517460
+--- !u!114 &3997649855795439950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8411562374027517461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89005e3961fad24aabecafa600b6058, type: 3}
+  m_Script: {fileID: 11500000, guid: 472786f0deb661147b7f74895cfb8c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
@@ -52,6 +53,7 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0.1
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Run
@@ -61,24 +63,27 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0.1
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Jump
-    clip: {fileID: 8300000, guid: a2bd31b922616b44db511925675740c1, type: 3}
+    clip: {fileID: 8300000, guid: 5432e92344f4e9d49817cd27f22fe64b, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0.1
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Hit
-    clip: {fileID: 8300000, guid: 5b9a4f9bfb037ed46be1a988d95c87f7, type: 3}
+    clip: {fileID: 8300000, guid: 2cd006eda714d194aaefd071b9cc82c5, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 1
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: FinalBoss
@@ -88,6 +93,7 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 1
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: FinalBossHit
@@ -97,6 +103,7 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0.5
     loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Death
@@ -106,5 +113,26 @@ MonoBehaviour:
     pitch: 1
     pitchVariance: 0.1
     loop: 0
+    enableReverb: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Explosion
+    clip: {fileID: 8300000, guid: fb7235a06e02eab43bbd5a9d64a0cfbc, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    enableReverb: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Increment
+    clip: {fileID: 8300000, guid: da384aeb59343344a8511f5cf66b0213, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    enableReverb: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

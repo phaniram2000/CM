@@ -9,6 +9,8 @@ using TMPro;
 using DitzeGames.Effects;
 using SWS;
 using Cinemachine;
+using StylizedWater2;
+using UnityEngine.EventSystems;
 using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
@@ -149,7 +151,7 @@ public class Player : MonoBehaviour
     public GameObject cam2;
     public GameObject particle1;
     public GameObject particle2;
-
+    float delay;
     public List<GameObject> SplineActive;
     private void Awake()
     {
@@ -170,16 +172,17 @@ public class Player : MonoBehaviour
         skin = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
         skin1 = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>();
         rb = GetComponent<Rigidbody>();
-      //  movement = true;
+        //  movement = true;
         isControl = false;
         isControlFall = false;
         //isControlWork = false;
         playerHealth = 10;
-        
+       // PlayerAnim.enabled = false;
         Vibration.Init();
 //        coinsText.text = coinsCount.ToString();
     }
     public Vector2 v;
+    private bool isDrag;
     private void Update()
     {
         fighttouch();
@@ -198,36 +201,36 @@ public class Player : MonoBehaviour
                 PlayerAnim.Play("HipHopDancing");
             }
         }
-       
-            SwipeContol();
+
+        if (isDrag)
+        {
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, 0, 7.5f), transform.position.y, transform.position.z);
+        }
         
-        if (Input.GetMouseButton(0))
-        v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        SwipeContol();
+        // if (Input.GetMouseButton(0))
+         v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, FOV, .5f * Time.deltaTime);
         //   Player_.GetComponent<Rigidbody>().AddForce(transform.forward * 1000f); 
     }
     void FixedUpdate()
     {
-        if(movement)
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (movement)
+        {
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
     }
 
     private void SwipeContol()
     {
-     //   StartTime();
         if (movement)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 startPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
                 rb.isKinematic = false;
-              //  IntroCanvas.SetActive(false);
-              //  UICanvas.SetActive(true);
             }
-            if (Input.GetMouseButtonUp(0))
-            {
-                //rb.isKinematic = true;
-            }
+            
             if (Input.GetMouseButton(0))
             {
                 endPos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
@@ -252,11 +255,6 @@ public class Player : MonoBehaviour
                 }
             }
         }
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //}
     }
     private void Jump()
     {
@@ -277,6 +275,9 @@ public class Player : MonoBehaviour
     private void StartTime()
     {
         movement = true;
+        ChangeAnimationState(PLAYER_RUN);
+        isDrag = true;
+        DOVirtual.DelayedCall(0.5f, () => isDrag = false);
     }
 
     public void cameramove()
@@ -292,7 +293,7 @@ public class Player : MonoBehaviour
         {
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 65, 40f * Time.deltaTime);
-          ///  AudioManager.instance.Play("Death");
+            AudioManager.instance.Play("Death");
             Vibration.VibratePop();
             uimanagr.instance.lost_panel();
             CameraEffects.ShakeOnce();
@@ -347,6 +348,7 @@ public class Player : MonoBehaviour
                 for (int i = 0; i < dummytrucks.Count; i++)
                 {
                     dummytrucks[i].SetActive(true);
+                    dummytrucks[i].GetComponent<TruckMove>().move = true;
                 }
                 for (int i = 0; i < trucks.Count; i++)
                 {
@@ -357,8 +359,8 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("MainTruck"))
         {
-            ChangeAnimationState(PLAYER_RUN);
-         //   Time.timeScale = 0;
+         //   ChangeAnimationState(PLAYER_RUN);
+            //Time.timeScale = 0.1f;
         }
 
         if (other.gameObject.CompareTag("Run"))
@@ -408,7 +410,7 @@ public class Player : MonoBehaviour
         {
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 70, 40f * Time.deltaTime);
-          ///  AudioManager.instance.Play("Death");
+            AudioManager.instance.Play("Death");
             Vibration.VibratePop();
             uimanagr.instance.lost_panel();
             CameraEffects.ShakeOnce();
@@ -430,7 +432,7 @@ public class Player : MonoBehaviour
             other.transform.GetChild(0).gameObject.SetActive(false);
             other.transform.GetChild(1).gameObject.SetActive(true);
             CameraEffects.ShakeOnce(0.5f, 5f);
-       ///     AudioManager.instance.Play("Glass");
+            AudioManager.instance.Play("Glass");
         } 
         if (other.gameObject.CompareTag("WallActive"))
         {
@@ -540,7 +542,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.CompareTag("SpringBoard"))
         {
-        ///    AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Vibration.VibratePop();
             ChangeAnimationState(PLAYER_POSE);
             Jump();
@@ -553,7 +555,7 @@ public class Player : MonoBehaviour
             ChangeAnimationState(PLAYER_RUN);
             // Jump();
             speed = 40; //level1 and level 2 110 and level 3 and 4 // jumpForce = jumpforceTrucktoTruck;
-           /// AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Time.timeScale = 45 * Time.deltaTime;
         }
 
@@ -572,7 +574,7 @@ public class Player : MonoBehaviour
         {
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 70, 40f * Time.deltaTime);
-         ///   AudioManager.instance.Play("Death");
+            AudioManager.instance.Play("Death");
             Vibration.VibratePop();
             uimanagr.instance.lost_panel();
             CameraEffects.ShakeOnce(0.5f, 10f);
@@ -592,21 +594,21 @@ public class Player : MonoBehaviour
             ChangeAnimationState(PLAYER_POSE);
             Jump();
             speed = jumpSpeedTrucktoTruck; //level1 and level 2 110 and level 3 and 4 // jumpForce = jumpforceTrucktoTruck;
-        ///    AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Time.timeScale = 45 * Time.deltaTime;
         }
 
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-        ///    AudioManager.instance.Play("Hit");
+           AudioManager.instance.Play("Hit");
             Vibration.VibratePop();
             CameraEffects.ShakeOnce(0.5f, 10f);
         }
 
         if (other.gameObject.CompareTag("CameraChange"))
         {
-          ///  AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             ChangeAnimationState(PLAYER_JUMP_OVER);
             particle1.SetActive(false);
@@ -614,7 +616,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.CompareTag("CameraRotate"))
         {
-          ///  AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Player_.transform.DORotate(new Vector3(90, 0, 0), 2f);
             cam2.SetActive(true);
             isWaterRun = false;
@@ -628,7 +630,7 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.CompareTag("BlendCameraRotate"))
         {
-         ///   AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             ChangeAnimationState(PLAYER_FLIP);
             speed = 300;
             Player_.transform.DORotate(new Vector3(30, 0, 0), 2f);
@@ -644,7 +646,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.CompareTag("ResetCameraChange"))
         {
-          ///  AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 100, 40f * Time.deltaTime);
             ChangeAnimationState(PLAYER_JUMP_OVER);
@@ -656,7 +658,7 @@ public class Player : MonoBehaviour
             Jump();
             jumpForce = finalJumpForce;
             speed = finalJumpSpeed;
-         ///   AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Time.timeScale = 45 * Time.deltaTime;
         }
         if (other.gameObject.CompareTag("HighJump"))
@@ -671,7 +673,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.CompareTag("SpringBoard"))
         {
-           /// AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             Vibration.VibratePop();
             ChangeAnimationState(PLAYER_POSE);
             Jump();
@@ -831,7 +833,7 @@ public class Player : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             CoinParticle.Play(true);
-           /// AudioManager.instance.Play("Coins");
+            AudioManager.instance.Play("Coins");
             coinsCount++;
           //  coinsText.text = coinsCount.ToString();
             // m_collider.enabled = false;
@@ -844,7 +846,7 @@ public class Player : MonoBehaviour
             {
                 this.transform.DOMove(transform.position + new Vector3(0, 5, 0), 0f);
             }
-         ///   AudioManager.instance.Play("Jump");
+            AudioManager.instance.Play("Jump");
             // m_collider.enabled = false;
         }
         if (other.gameObject.CompareTag("Idle"))
@@ -982,7 +984,7 @@ public class Player : MonoBehaviour
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 70, 40f * Time.deltaTime);
             dummyplayer();
-       ///     AudioManager.instance.Play("Death");
+            AudioManager.instance.Play("Death");
             Vibration.VibratePop();
             uimanagr.instance.lost_panel();
             CameraEffects.ShakeOnce();
@@ -996,7 +998,7 @@ public class Player : MonoBehaviour
             cam.transform.DORotate(new Vector3(30, 0, 0), 2f);
             cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 70, 40f * Time.deltaTime);
             dummyplayer();
-        ///    AudioManager.instance.Play("Death");
+            AudioManager.instance.Play("Death");
             Vibration.VibratePop();
             uimanagr.instance.lost_panel();
             CameraEffects.ShakeOnce();
@@ -1021,7 +1023,7 @@ public class Player : MonoBehaviour
                     {
                         PlayerAnim.Play("Punch");
                         BossFight.instance.takedamage(1);
-                     ///   AudioManager.instance.Play("FinalBossHit");
+                        AudioManager.instance.Play("FinalBossHit");
                         PlayerPunch.Play(true);
                     }
                 }
@@ -1037,7 +1039,7 @@ public class Player : MonoBehaviour
                     {
                         PlayerAnim.Play("AirAttack");
                         BossFall.instance.takedamage(1);
-                      ///  AudioManager.instance.Play("FinalBossHit");
+                        AudioManager.instance.Play("FinalBossHit");
                         PlayerPunch.Play(true);
                     }
                 }

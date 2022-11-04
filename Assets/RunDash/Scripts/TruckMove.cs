@@ -10,6 +10,15 @@ public class TruckMove : MonoBehaviour
     public AudioSource blast;
 
     public bool move;
+
+    public static TruckMove instance;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -23,7 +32,20 @@ public class TruckMove : MonoBehaviour
         }
     }
 
-   
+    private void OnEnable()
+    {
+        GameEvents.TapToPlay += taptoplay;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.TapToPlay -= taptoplay;
+    }
+
+    private void taptoplay()
+    {
+        move = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

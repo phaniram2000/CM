@@ -8,7 +8,7 @@ public class CrowdFollow : MonoBehaviour
     public Transform charToFollow;
     public float damping;
 
- //   public static Player instance;
+    public static Player instance;
     [Header("Controls")]
     [Header("Components to Assign")]
     // public Rigidbody rb;
