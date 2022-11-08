@@ -7,7 +7,7 @@ namespace Coffee.UIEffects.Editors
     /// <summary>
     /// UIShadow editor.
     /// </summary>
-    [CustomEditor(typeof(UIShadow))]
+    //[CustomEditor(typeof(UIShadow))]
     [CanEditMultipleObjects]
     public class UIShadowEditor : Editor
     {
